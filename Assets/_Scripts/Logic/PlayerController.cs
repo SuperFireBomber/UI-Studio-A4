@@ -62,6 +62,10 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = new Vector3(horizontalVelocity.x, velocity.y, horizontalVelocity.y);
         }
     }
+        public void UpdatePlayerMaxSpeed(float speed)
+    {
+        maxSpeed = speed;
+    }
 
     private void OnCollisionStay(Collision collision)
     {
@@ -113,8 +117,5 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(transform.forward * dashForce, ForceMode.Impulse);
     }
 
-    public void UpdatePlayerMaxSpeed(float speed)
- {
- maxSpeed = speed;
- }
+
 }
